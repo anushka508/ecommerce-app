@@ -1,6 +1,6 @@
 <template>
-  <section class="p-6 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-6">Contact Us</h2>
+  <section class="bg-white">
+   
     <ContactForm />
   </section>
 </template>

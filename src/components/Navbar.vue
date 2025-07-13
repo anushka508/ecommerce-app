@@ -1,12 +1,21 @@
 <template>
-  <nav class="bg-blue-600 text-white px-6 py-4 flex justify-between items-center shadow-md relative">
+  <nav
+    class="bg-blue-600 text-white px-6 py-4 flex justify-between items-center shadow-md relative"
+  >
     <!-- Logo -->
     <div class="text-2xl font-bold tracking-wide">MyShop</div>
 
     <!-- Hamburger Button (Mobile) -->
     <button @click="toggleMenu" class="md:hidden focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
@@ -18,34 +27,44 @@
           to="/"
           class="nav-link"
           :class="{ 'active-link': $route.path === '/' }"
-        >Home</router-link>
+          >Home</router-link
+        >
       </li>
       <li>
         <router-link
           to="/about"
           class="nav-link"
           :class="{ 'active-link': $route.path === '/about' }"
-        >About Us</router-link>
+          >About Us</router-link
+        >
       </li>
       <li>
         <router-link
           to="/products"
           class="nav-link"
           :class="{ 'active-link': $route.path === '/products' }"
-        >Products</router-link>
+          >Products</router-link
+        >
+      </li>
+     
+       <li>
+        <router-link to="/orders" class="hover:text-yellow-300 transition"
+          >Orders</router-link
+        >
       </li>
       <li>
+        <router-link to="/cart" class="hover:text-yellow-300 transition"
+          >Cart 🛒</router-link
+        >
+      </li>
+       <li>
         <router-link
           to="/contact"
-          class="nav-link"
+          class="nav-link w-full"
+          @click="closeMenu"
           :class="{ 'active-link': $route.path === '/contact' }"
-        >Contact Us</router-link>
-      </li>
-      <li>
-        <router-link
-          to="/cart"
-          class="hover:text-yellow-300 transition"
-        >Cart 🛒</router-link>
+          >Contact Us</router-link
+        >
       </li>
     </ul>
 
@@ -60,7 +79,8 @@
           class="nav-link w-full"
           @click="closeMenu"
           :class="{ 'active-link': $route.path === '/' }"
-        >Home</router-link>
+          >Home</router-link
+        >
       </li>
       <li>
         <router-link
@@ -68,7 +88,8 @@
           class="nav-link w-full"
           @click="closeMenu"
           :class="{ 'active-link': $route.path === '/about' }"
-        >About Us</router-link>
+          >About Us</router-link
+        >
       </li>
       <li>
         <router-link
@@ -76,7 +97,22 @@
           class="nav-link w-full"
           @click="closeMenu"
           :class="{ 'active-link': $route.path === '/products' }"
-        >Products</router-link>
+          >Products</router-link
+        >
+      </li>
+     
+       <li>
+        <router-link to="/orders" class="hover:text-yellow-300 transition"
+          >Orders</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          to="/cart"
+          class="hover:text-yellow-300 transition"
+          @click="closeMenu"
+          >Cart 🛒</router-link
+        >
       </li>
       <li>
         <router-link
@@ -84,35 +120,30 @@
           class="nav-link w-full"
           @click="closeMenu"
           :class="{ 'active-link': $route.path === '/contact' }"
-        >Contact Us</router-link>
-      </li>
-      <li>
-        <router-link
-          to="/cart"
-          class="hover:text-yellow-300 transition"
-          @click="closeMenu"
-        >Cart 🛒</router-link>
+          >Contact Us</router-link
+        >
       </li>
     </ul>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 const toggleMenu = () => {
-  isOpen.value = !isOpen.value
-}
+  isOpen.value = !isOpen.value;
+};
 const closeMenu = () => {
-  isOpen.value = false
-}
+  isOpen.value = false;
+};
 </script>
 
 <style scoped>
 .nav-link {
   @apply hover:text-yellow-300 transition duration-200;
 }
+
 .active-link {
   @apply text-yellow-300 border-b-2 border-yellow-300 pb-1;
 }

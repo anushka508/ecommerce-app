@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <h1 class="text-3xl font-bold p-6">Our Products</h1>
+    <h1 class="text-3xl font-bold p-6 mx-5">Our Products</h1>
     <ProductList />
   </div>
 </template>

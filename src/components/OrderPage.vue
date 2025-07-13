@@ -17,6 +17,7 @@ const products = {
   1: { name: 'Laptop', price: 40000 },
   2: { name: 'Phone', price: 20000 },
   3: { name: 'Tablet', price: 15000 },
+  4: {name:'Computer',price:40000},
 }
 
 const product = products[route.params.id]

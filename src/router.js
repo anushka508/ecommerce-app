@@ -6,6 +6,7 @@ import Order from './pages/Order.vue'
 import Contact from './pages/Contact.vue'
 import AboutPage from './pages/AboutPage.vue'
 import Cart from './pages/Cart.vue'
+import OrderList from './pages/OrderList.vue'
 
 
 const routes = [
@@ -14,7 +15,9 @@ const routes = [
   { path: '/products', component: Products },
   { path: '/order/:id', component: Order, props: true },
   { path: '/contact', component: Contact },
-  { path: '/cart', component: Cart }
+  { path: '/cart', component: Cart },
+  { path: '/orders', component: OrderList }
+  
 ]
 
 const router = createRouter({
