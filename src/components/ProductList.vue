@@ -1,5 +1,5 @@
 <template>
-  <Navbar/>
+ 
   <section class="bg-white  px-4">
     <div class="max-w-7xl mx-auto ">
      
