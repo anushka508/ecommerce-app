@@ -1,4 +1,5 @@
 <template>
+  <Navbar/>
   <section class="bg-white  px-4">
     <div class="max-w-7xl mx-auto ">
      
@@ -65,6 +66,7 @@ import ExternalHardDrive from "../assets/images/ExternalHardDrive.webp"
 import Webcam from "../assets/images/Webcam.webp"
 import Printer from '../assets/images/Printer.webp'
 import VRHeadset from "../assets/images/VRHeadset.jpg"
+import Navbar from './Navbar.vue'
 
 const { addToCart, orderProduct } = useCart()
 const router = useRouter()
