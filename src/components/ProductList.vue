@@ -54,6 +54,17 @@ import Mobile from '../assets/images/Mobile.jpg'
 import Laptop from '../assets/images/Laptop2.webp'
 import Tablet from "../assets/images/Tablet.webp"
 import Computer from "../assets/images/Computer.jpg"
+import SmartWatch from "../assets/images/SmartWatch.webp"
+import BluetoothSpeaker from "../assets/images/BluetoothSpeaker.jpeg"
+import GamingConsole from "../assets/images/GamingConsole.webp"
+import WirelessHeadphones from "../assets/images/WirelessHeadphones.jpg"
+import Monitor from "../assets/images/Monitor.jpg"
+import KeyboardMouseCombo from '../assets/images/KeyboardMouseCombo.webp'
+import WiFiRouter from '../assets/images/WiFiRouterImage.webp'
+import ExternalHardDrive from "../assets/images/ExternalHardDrive.webp"
+import Webcam from "../assets/images/Webcam.webp"
+import Printer from '../assets/images/Printer.webp'
+import VRHeadset from "../assets/images/VRHeadset.jpg"
 
 const { addToCart, orderProduct } = useCart()
 const router = useRouter()
@@ -94,77 +105,77 @@ const products = [
     id: 5,
     name: 'Smartwatch',
     price: 7000,
-    img: 'https://via.placeholder.com/150?text=Smartwatch',
+    img: SmartWatch ,
     description: 'Stay connected with style. Tracks health, notifications, and workouts.'
   },
   {
     id: 6,
     name: 'Bluetooth Speaker',
     price: 3000,
-    img: 'https://via.placeholder.com/150?text=Speaker',
+    img: BluetoothSpeaker,
     description: 'Portable and powerful speaker with deep bass and waterproof design.'
   },
   {
     id: 7,
     name: 'Gaming Console',
     price: 35000,
-    img: 'https://via.placeholder.com/150?text=Console',
+    img: GamingConsole,
     description: 'Next-gen gaming experience with ultra-fast load times and immersive visuals.'
   },
   {
     id: 8,
     name: 'Wireless Headphones',
     price: 4500,
-    img: 'https://via.placeholder.com/150?text=Headphones',
+    img: WirelessHeadphones,
     description: 'Noise-cancelling wireless headphones with long battery life and crisp audio.'
   },
   {
     id: 9,
     name: 'Monitor',
     price: 12000,
-    img: 'https://via.placeholder.com/150?text=Monitor',
+    img: Monitor,
     description: '24-inch full HD monitor with eye-care technology and vibrant colors.'
   },
   {
     id: 10,
     name: 'Keyboard & Mouse Combo',
     price: 1500,
-    img: 'https://via.placeholder.com/150?text=Keyboard+Mouse',
+    img: KeyboardMouseCombo,
     description: 'Ergonomic keyboard and mouse combo for seamless productivity.'
   },
   {
     id: 11,
     name: 'WiFi Router',
     price: 2500,
-    img: 'https://via.placeholder.com/150?text=Router',
+    img: WiFiRouter,
     description: 'Dual-band WiFi router with wide coverage and fast speed.'
   },
   {
     id: 12,
     name: 'External Hard Drive',
     price: 6000,
-    img: 'https://via.placeholder.com/150?text=HDD',
+    img: ExternalHardDrive,
     description: '1TB portable external hard drive for secure data storage.'
   },
   {
     id: 13,
     name: 'Webcam',
     price: 2200,
-    img: 'https://via.placeholder.com/150?text=Webcam',
+    img: Webcam,
     description: '1080p HD webcam with built-in microphone for video calls and streaming.'
   },
   {
     id: 14,
     name: 'Printer',
     price: 8000,
-    img: 'https://via.placeholder.com/150?text=Printer',
+    img: Printer,
     description: 'All-in-one color printer for scanning, copying, and printing at home.'
   },
   {
     id: 15,
     name: 'VR Headset',
     price: 18000,
-    img: 'https://via.placeholder.com/150?text=VR+Headset',
+    img: VRHeadset,
     description: 'Immersive virtual reality headset for gaming and 3D experiences.'
   }
 ]
