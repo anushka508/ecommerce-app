@@ -183,6 +183,6 @@ const products = [
 
 const handleOrder = (product) => {
   orderProduct(product)
-  router.push('/orders')
+ 
 }
 </script>
