@@ -4,8 +4,13 @@
       
       <!-- Company Info -->
       <div>
-        <h3 class="text-xl font-bold mb-3">MyShop</h3>
-        <p class="text-sm text-gray-300">
+    <router-link
+  to="/"
+  class="text-2xl font-bold tracking-wide hover:text-cyan-300 transition"
+>
+  MyShop
+</router-link>
+        <p class="text-sm text-gray-300 mt-5">
           Your one-stop destination for innovative tech products, unbeatable deals, and fast delivery.
         </p>
       </div>

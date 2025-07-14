@@ -207,14 +207,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-800 text-white text-center py-4">
-      &copy; 2025 MyShop. All rights reserved.
-    </footer>
+   <Footer/>
   </div>
 </template>
 
 <script setup>
 import Navbar from '../components/Navbar.vue'
+import Footer from '../components/Footer.vue';
 </script>
 
 <style scoped>
