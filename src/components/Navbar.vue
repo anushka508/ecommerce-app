@@ -3,7 +3,13 @@
     class="bg-blue-600 text-white px-6 py-4 flex justify-between items-center shadow-md relative"
   >
     <!-- Logo -->
-    <div class="text-2xl font-bold tracking-wide">MyShop</div>
+ <router-link
+  to="/"
+  class="text-2xl font-bold tracking-wide hover:text-cyan-300 transition"
+>
+  MyShop
+</router-link>
+
 
     <!-- Hamburger Button (Mobile) -->
     <button @click="toggleMenu" class="md:hidden focus:outline-none">
@@ -49,7 +55,8 @@
      
       
       <li>
-        <router-link to="/cart" class="hover:text-yellow-300 transition"
+        <router-link to="/cart" class="nav-link"
+          :class="{ 'active-link': $route.path === '/cart' }"
           >Cart 🛒</router-link
         >
       </li>
@@ -133,10 +140,32 @@ const closeMenu = () => {
 
 <style scoped>
 .nav-link {
-  @apply hover:text-yellow-300 transition duration-200;
+  @apply relative transition duration-200 px-1;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #67e8f9; /* Tailwind's cyan-300 */
+}
+
+.nav-link:hover::after {
+  background-color: #67e8f9;
 }
 
 .active-link {
-  @apply text-yellow-300 border-b-2 border-yellow-300 pb-1;
+  color: #ffffff;
+  border-bottom: 2px solid #22d3ee; /* Tailwind's cyan-400 */
 }
+
 </style>
+

@@ -56,11 +56,13 @@
       </div>
     </div>
   </div>
+  <Footer/>
 </template>
 
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import { useCart } from '../composables/useCart'
+import Footer from '../components/Footer.vue'
 
 const { cart, removeFromCart } = useCart()
 const fallbackImage = 'https://via.placeholder.com/100x100?text=No+Image'

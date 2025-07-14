@@ -2,53 +2,212 @@
   <div>
     <Navbar />
 
-    <!-- Hero Banner -->
-    <section
-      class="relative h-72 bg-cover bg-center text-white"
-      style="background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80')"
-    >
-      <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center px-4">
-        <h1 class="text-4xl md:text-5xl font-bold animate-fade-in-slow">About Us</h1>
-        <p class="text-lg mt-2 animate-slide-up">Who we are & what we do</p>
+    <!-- Hero Section -->
+    <section class="relative h-80 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold animate-fade-in-slow">About MyShop</h1>
+        <p class="text-lg mt-3 animate-slide-up">Delivering Innovation at Your Fingertips</p>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="max-w-5xl mx-auto p-10 text-center">
-      <h2 class="text-3xl font-semibold mb-4 animate-fade-in-slow">Our Story</h2>
-      <p class="text-gray-700 leading-relaxed mb-10 animate-slide-up">
-        MyShop was founded with a mission to make technology more accessible and affordable to everyone.
-        We are passionate about innovation and committed to bringing the latest electronic gadgets at the
-        best prices directly to your doorstep.
+    <!-- Who We Are -->
+    <section class="max-w-6xl mx-auto py-16 px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4 animate-fade-in-slow">Who We Are</h2>
+      <p class="text-gray-600 text-lg leading-relaxed animate-slide-up">
+        MyShop is a forward-thinking e-commerce platform specializing in electronics and smart gadgets.
+        Since our inception in 2023, we’ve been committed to bridging the gap between people and
+        cutting-edge technology by providing high-quality products at transparent prices.
       </p>
+    </section>
 
-      <h2 class="text-3xl font-semibold mb-6 animate-fade-in-slow">What Makes Us Different</h2>
-      <div class="grid md:grid-cols-3 gap-6 text-left mt-4">
-        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition animate-slide-up">
-          <h3 class="text-xl font-bold mb-2 text-blue-600">Quality Products</h3>
-          <p>We only partner with trusted brands to deliver the highest-quality tech products.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition animate-slide-up delay-100">
-          <h3 class="text-xl font-bold mb-2 text-blue-600">Affordable Pricing</h3>
-          <p>We cut the middleman so you get the best prices—guaranteed.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition animate-slide-up delay-200">
-          <h3 class="text-xl font-bold mb-2 text-blue-600">Customer Focus</h3>
-          <p>Our support team is always ready to help with your queries and purchases.</p>
+    <!-- Mission & Values -->
+    <section class="bg-gray-100 py-16 px-6">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-blue-700 mb-6 animate-fade-in-slow">Our Mission & Values</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+          <div class="bg-white p-6 rounded-xl shadow animate-slide-up">
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">Innovation</h3>
+            <p>We continuously evolve to offer the latest tech innovations and user-centric shopping experiences.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow animate-slide-up delay-100">
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">Integrity</h3>
+            <p>We prioritize honest pricing, clear policies, and customer-first decisions in everything we do.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow animate-slide-up delay-200">
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">Accessibility</h3>
+            <p>Everyone deserves access to smart gadgets—our platform ensures affordability and reachability.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Vision Section -->
-    <section class="bg-blue-700 text-white text-center p-10">
-      <h2 class="text-3xl font-semibold mb-4 animate-fade-in-slow">Our Vision</h2>
-      <p class="max-w-3xl mx-auto animate-slide-up">
-        To be India’s most customer-centric tech store where people can discover and buy anything innovative at the lowest prices.
+
+
+    <!-- Our Process -->
+    <section class="max-w-6xl mx-auto py-20 px-6">
+      <h2 class="text-3xl font-bold text-blue-700 text-center mb-10 animate-fade-in-slow">How We Work</h2>
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 animate-slide-up">
+          <img src="https://img.icons8.com/ios-filled/100/shopping-cart.png" class="mx-auto w-14 mb-3" />
+          <h4 class="font-semibold mb-2">Curate Products</h4>
+          <p class="text-gray-600">We handpick trending and reliable gadgets with real-world reviews.</p>
+        </div>
+        <div class="p-4 animate-slide-up delay-100">
+          <img src="https://img.icons8.com/ios-filled/100/checked--v1.png" class="mx-auto w-14 mb-3" />
+          <h4 class="font-semibold mb-2">Quality Assurance</h4>
+          <p class="text-gray-600">Each product goes through rigorous quality checks before listing.</p>
+        </div>
+        <div class="p-4 animate-slide-up delay-200">
+          <img src="https://img.icons8.com/ios-filled/100/delivery.png" class="mx-auto w-14 mb-3" />
+          <h4 class="font-semibold mb-2">Fast Shipping</h4>
+          <p class="text-gray-600">We offer quick and reliable delivery across India within 3–5 business days.</p>
+        </div>
+        <div class="p-4 animate-slide-up delay-300">
+          <img src="https://img.icons8.com/ios-filled/100/customer-support.png" class="mx-auto w-14 mb-3" />
+          <h4 class="font-semibold mb-2">Customer Support</h4>
+          <p class="text-gray-600">Need help? Our live support team is available 24/7 for all your needs.</p>
+        </div>
+      </div>
+    </section>
+
+    
+<!-- Careers Section -->
+<section class="bg-white py-20 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-4">We're Hiring!</h2>
+    <p class="text-gray-600 mb-12 text-lg">
+      Join a fast-growing team shaping the future of e-commerce. We value creativity, ownership, and passion for impact.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition duration-300 hover:-translate-y-1">
+        <h4 class="text-xl font-semibold text-blue-700 mb-1">Frontend Developer</h4>
+        <p class="text-gray-600 mb-2 text-sm">Location: Remote | Type: Full-time</p>
+        <p class="text-gray-700 text-sm">Build responsive UIs using Vue or React. Experience with Tailwind, component libraries, and version control required.</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition duration-300 hover:-translate-y-1">
+        <h4 class="text-xl font-semibold text-blue-700 mb-1">Marketing Executive</h4>
+        <p class="text-gray-600 mb-2 text-sm">Location: Mumbai | Type: Full-time</p>
+        <p class="text-gray-700 text-sm">Create and manage campaigns, SEO optimization, brand outreach, and performance marketing analytics.</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition duration-300 hover:-translate-y-1">
+        <h4 class="text-xl font-semibold text-blue-700 mb-1">Customer Success Specialist</h4>
+        <p class="text-gray-600 mb-2 text-sm">Location: Remote | Type: Part-time</p>
+        <p class="text-gray-700 text-sm">Assist customers, resolve issues, and deliver delightful support via chat, email, and calls.</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition duration-300 hover:-translate-y-1">
+        <h4 class="text-xl font-semibold text-blue-700 mb-1">Backend Developer</h4>
+        <p class="text-gray-600 mb-2 text-sm">Location: Bengaluru | Type: Full-time</p>
+        <p class="text-gray-700 text-sm">Work with Node.js, databases (MongoDB/MySQL), REST APIs, and deployment pipelines.</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition duration-300 hover:-translate-y-1">
+        <h4 class="text-xl font-semibold text-blue-700 mb-1">UI/UX Designer</h4>
+        <p class="text-gray-600 mb-2 text-sm">Location: Remote | Type: Freelance</p>
+        <p class="text-gray-700 text-sm">Design user-friendly interfaces with Figma/Adobe XD. Experience in wireframing and usability testing preferred.</p>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition duration-300 hover:-translate-y-1">
+        <h4 class="text-xl font-semibold text-blue-700 mb-1">Operations Intern</h4>
+        <p class="text-gray-600 mb-2 text-sm">Location: Nagpur | Type: Internship</p>
+        <p class="text-gray-700 text-sm">Support logistics, order fulfillment, and day-to-day operations. Suitable for recent graduates.</p>
+      </div>
+    </div>
+
+    <button class="mt-12 bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+      View All Openings
+    </button>
+  </div>
+</section>
+
+
+    <!-- Testimonials -->
+    <section class="bg-blue-50 py-20 px-6">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-blue-700 mb-10 animate-fade-in-slow">What Our Customers Say</h2>
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+          <div class="bg-white p-6 rounded-lg shadow animate-slide-up">
+            <p class="text-gray-700 italic">“Best online store for tech. Ordered a smartwatch and got it in 2 days. Amazing support!”</p>
+            <p class="mt-3 font-bold text-blue-700">— Neha K., Mumbai</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow animate-slide-up delay-100">
+            <p class="text-gray-700 italic">“They have unbeatable prices! I saved ₹1500 on my latest phone purchase.”</p>
+            <p class="mt-3 font-bold text-blue-700">— Ravi S., Bengaluru</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="bg-white py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-4">Stay in the Loop</h2>
+    <p class="text-gray-600 mb-6">Subscribe to get updates on new arrivals, offers, and exclusive deals.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <input type="email" placeholder="Enter your email" class="w-full sm:w-auto px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- FAQ Section -->
+<section class="bg-gray-100 py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-blue-700 text-center mb-8">Frequently Asked Questions</h2>
+    <div class="space-y-6">
+
+      <details class="bg-white p-5 rounded-md shadow">
+        <summary class="font-semibold cursor-pointer text-blue-600">What is the delivery time?</summary>
+        <p class="mt-2 text-gray-600">We typically deliver products within 3–5 business days across India, depending on your location and availability of the item.</p>
+      </details>
+
+      <details class="bg-white p-5 rounded-md shadow">
+        <summary class="font-semibold cursor-pointer text-blue-600">What payment methods do you accept?</summary>
+        <p class="mt-2 text-gray-600">We accept all major debit/credit cards, UPI, net banking, Paytm, and cash on delivery for eligible items.</p>
+      </details>
+
+      <details class="bg-white p-5 rounded-md shadow">
+        <summary class="font-semibold cursor-pointer text-blue-600">Can I return my order?</summary>
+        <p class="mt-2 text-gray-600">Yes, we offer a 7-day easy return policy on most items. Products must be in original condition and packaging. Please refer to our Returns & Refunds page for full details.</p>
+      </details>
+
+      <details class="bg-white p-5 rounded-md shadow">
+        <summary class="font-semibold cursor-pointer text-blue-600">Do you provide a warranty on products?</summary>
+        <p class="mt-2 text-gray-600">Yes, most electronics and gadgets come with a manufacturer warranty ranging from 6 to 12 months. Warranty information is listed on each product page.</p>
+      </details>
+
+      <details class="bg-white p-5 rounded-md shadow">
+        <summary class="font-semibold cursor-pointer text-blue-600">How can I track my order?</summary>
+        <p class="mt-2 text-gray-600">Once your order is shipped, you’ll receive a tracking link via email and SMS. You can also check the status in the “My Orders” section of your account.</p>
+      </details>
+
+      <details class="bg-white p-5 rounded-md shadow">
+        <summary class="font-semibold cursor-pointer text-blue-600">Is shopping on MyShop secure?</summary>
+        <p class="mt-2 text-gray-600">Absolutely! We use SSL encryption and partner with trusted payment gateways to ensure a safe and secure shopping experience for our customers.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Secure Shopping -->
+    <section class="bg-gradient-to-r from-green-600 to-green-500 text-white py-16 px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4 animate-fade-in-slow">Your Security, Our Priority</h2>
+      <p class="max-w-3xl mx-auto text-lg animate-slide-up">
+        We use the latest encryption technologies and partner with trusted payment gateways to ensure your personal and payment information remains safe at every step.
       </p>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-800 text-white text-center p-4">
+    <footer class="bg-blue-800 text-white text-center py-4">
       &copy; 2025 MyShop. All rights reserved.
     </footer>
   </div>
@@ -90,5 +249,8 @@ import Navbar from '../components/Navbar.vue'
 }
 .delay-200 {
   animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
 }
 </style>
