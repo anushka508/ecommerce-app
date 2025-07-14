@@ -1,21 +1,30 @@
 <template>
- 
-  <section class="bg-white  px-4">
-    <div class="max-w-7xl mx-auto ">
-     
+  <!-- ✅ Toast Message -->
+  <div
+    v-if="showToast"
+    :class="[
+      'fixed top-5 left-1/2 transform -translate-x-1/2 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-in',
+      toastColor
+    ]"
+  >
+    {{ toastMessage }}
+  </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 ">
+  <!-- ✅ Product Cards -->
+  <section class="bg-white px-4 py-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div
           v-for="product in products"
           :key="product.id"
-          class="bg-white border border-gray-200 rounded-2xl  shadow-sm hover:shadow-xl transition duration-300 flex flex-col overflow-hidden"
+          class="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 flex flex-col overflow-hidden"
         >
           <!-- Image -->
           <div class="pt-5 pb-5 h-56 flex items-center justify-center overflow-hidden">
             <img
               :src="product.img || fallbackImage"
               alt="Product Image"
-              class="h-full object-contain transition-transform duration-300"
+              class="h-full object-contain"
             />
           </div>
 
@@ -27,17 +36,17 @@
           </div>
 
           <!-- Buttons -->
-          <div class="border-t mb-8 px-5 py-6 mt-auto flex flex-wrap md:flex md:flex-nowrap  gap-4  justify-between items-center">
+          <div class="border-t mb-8 px-5 py-6 mt-auto flex flex-wrap md:flex-nowrap gap-4 justify-between items-center">
             <button
-              @click="addToCart(product)"
-              class="bg-blue-600 hover:bg-blue-700 text-white w-full  py-2 rounded-md font-medium transition"
+              @click="handleAddToCart(product)"
+              class="bg-blue-600 hover:bg-blue-700 text-white w-full py-2 rounded-md font-medium transition"
             >
               Add to Cart
             </button>
 
             <button
-              @click="() => handleOrder(product)"
-              class="bg-green-600 hover:bg-green-700 text-white w-full  py-2 rounded-md font-medium transition"
+              @click="handleOrder(product)"
+              class="bg-green-600 hover:bg-green-700 text-white w-full py-2 rounded-md font-medium transition"
             >
               Order Now
             </button>
@@ -49,8 +58,9 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useCart } from '../composables/useCart'
-import { useRouter } from 'vue-router'
+
 import Mobile from '../assets/images/Mobile.jpg'
 import Laptop from '../assets/images/Laptop2.webp'
 import Tablet from "../assets/images/Tablet.webp"
@@ -66,11 +76,36 @@ import ExternalHardDrive from "../assets/images/ExternalHardDrive.webp"
 import Webcam from "../assets/images/Webcam.webp"
 import Printer from '../assets/images/Printer.webp'
 import VRHeadset from "../assets/images/VRHeadset.jpg"
-import Navbar from './Navbar.vue'
+
+// Composable (must be properly defined)
+
 
 const { addToCart, orderProduct } = useCart()
-const router = useRouter()
 
+
+// Toast state
+const toastMessage = ref('')
+const toastColor = ref('')
+const showToast = ref(false)
+
+function triggerToast(message, color = 'blue') {
+  toastMessage.value = message
+  toastColor.value =
+    color === 'green'
+      ? 'bg-green-600'
+      : color === 'red'
+      ? 'bg-red-600'
+      : 'bg-blue-600'
+
+  showToast.value = true
+
+  setTimeout(() => {
+    showToast.value = false
+    toastMessage.value = ''
+  }, 2000)
+}
+
+// Test data
 const fallbackImage = 'https://via.placeholder.com/150'
 
 const products = [
@@ -182,9 +217,33 @@ const products = [
   }
 ]
 
+// Button functions
+function handleAddToCart(product) {
+  console.log('Adding to cart:', product.name)
+  addToCart(product)
+  triggerToast(`${product.name} added to cart`, 'blue')
+}
 
-const handleOrder = (product) => {
+function handleOrder(product) {
+  console.log('Ordering product:', product.name)
   orderProduct(product)
- 
+  triggerToast(`✅ Order done for ${product.name}`, 'green')
 }
 </script>
+
+<style scoped>
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+</style>

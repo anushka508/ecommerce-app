@@ -47,11 +47,7 @@
         >
       </li>
      
-       <li>
-        <router-link to="/orders" class="hover:text-yellow-300 transition"
-          >Orders</router-link
-        >
-      </li>
+      
       <li>
         <router-link to="/cart" class="hover:text-yellow-300 transition"
           >Cart 🛒</router-link
@@ -101,11 +97,7 @@
         >
       </li>
      
-       <li>
-        <router-link to="/orders" class="hover:text-yellow-300 transition"
-          >Orders</router-link
-        >
-      </li>
+      
       <li>
         <router-link
           to="/cart"

@@ -1,70 +1,48 @@
-import { reactive, watch } from 'vue'
+import { ref, watch } from 'vue'
 
-// Load from localStorage or default to empty
-const cart = reactive(JSON.parse(localStorage.getItem('cart') || '[]'))
-const orders = reactive(JSON.parse(localStorage.getItem('orders') || '[]'))
+// ✅ Load cart from localStorage
+const storedCart = localStorage.getItem('cart')
+const cart = ref(storedCart ? JSON.parse(storedCart) : [])
 
-export function useCart() {
-  const addToCart = (product) => {
-  const existing = cart.find(item => item.id === product.id)
+// ✅ Save cart to localStorage whenever it changes
+watch(cart, (newCart) => {
+  localStorage.setItem('cart', JSON.stringify(newCart))
+}, { deep: true })
+
+// ✅ Add to cart or increase quantity
+function addToCart(product) {
+  const existing = cart.value.find(item => item.id === product.id)
   if (existing) {
-    existing.quantity++
+    existing.quantity += 1
   } else {
-    cart.push({ ...product, quantity: 1 })
+    cart.value.push({ ...product, quantity: 1 })
   }
 }
 
-  const orderProduct = (product) => {
-    const existing = orders.find(item => item.id === product.id)
-    if (existing) {
-      existing.quantity++
-    } else {
-      orders.push({ ...product, quantity: 1 })
-    }
-  }
-
-const removeFromCart = (id) => {
-  const item = cart.find(i => i.id === id)
+// ✅ Remove item from cart (one by one)
+function removeFromCart(id) {
+  const item = cart.value.find(i => i.id === id)
   if (item) {
     if (item.quantity > 1) {
       item.quantity--
     } else {
-      const index = cart.findIndex(i => i.id === id)
-      if (index > -1) cart.splice(index, 1)
-    }
-  }
-}
- const removeFromOrders = (id) => {
-  const item = orders.find(i => i.id === id)
-
-  if (item) {
-    if (item.quantity > 1) {
-      item.quantity--
-    } else {
-      const index = orders.findIndex(i => i.id === id)
-      if (index > -1) {
-        orders.splice(index, 1)
-      }
+      const index = cart.value.findIndex(i => i.id === id)
+      if (index > -1) cart.value.splice(index, 1)
     }
   }
 }
 
+// ✅ Simulate order
+function orderProduct(product) {
+  console.log(`✅ Order placed for: ${product.name}`)
+}
 
-  // Save to localStorage whenever cart or orders change
-  watch(cart, () => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }, { deep: true })
-
-  watch(orders, () => {
-    localStorage.setItem('orders', JSON.stringify(orders))
-  }, { deep: true })
-
+// ✅ Export composable
+export function useCart() {
   return {
     cart,
-    orders,
     addToCart,
-    orderProduct,
     removeFromCart,
-    removeFromOrders
+    orderProduct
   }
 }
