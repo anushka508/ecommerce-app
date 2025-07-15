@@ -10,12 +10,13 @@
     </div>
 
     <!-- Toast Message -->
-    <div
-      v-if="showToast"
-      class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-slow"
-    >
-      {{ toastMessage }}
-    </div>
+  <!-- Toast Message -->
+<div
+  v-if="showToast"
+   class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-up"
+>
+  {{ toastMessage }}
+</div>
 
     <!-- Overlay Content -->
     <div class="relative z-10 w-full bg-black/60 backdrop-blur-sm text-white px-4 py-20 flex justify-center">
@@ -137,5 +138,18 @@ const handleSubscribe = () => {
 }
 .animate-glow {
   animation: glow 4s infinite ease-in-out;
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
 }
 </style>
