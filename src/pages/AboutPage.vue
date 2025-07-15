@@ -146,7 +146,14 @@
     <p class="text-gray-600 mb-6">Subscribe to get updates on new arrivals, offers, and exclusive deals.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <input type="email" placeholder="Enter your email" class="w-full sm:w-auto px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Subscribe</button>
+      <button
+  @click="handleSubscribe"
+  type="button"
+  class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition"
+>
+  Subscribe
+</button>
+
     </div>
   </div>
 </section>
@@ -205,6 +212,13 @@
         We use the latest encryption technologies and partner with trusted payment gateways to ensure your personal and payment information remains safe at every step.
       </p>
     </section>
+    <div
+  v-if="showToast"
+  class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-up"
+>
+  {{ toastMessage }}
+</div>
+
 
     <!-- Footer -->
    <Footer/>
@@ -214,6 +228,22 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import Footer from '../components/Footer.vue';
+
+import { ref } from 'vue'
+
+const showToast = ref(false)
+const toastMessage = ref('')
+
+const handleSubscribe = () => {
+  toastMessage.value = '✅ Subscribed successfully!'
+  showToast.value = true
+
+  setTimeout(() => {
+    showToast.value = false
+    toastMessage.value = ''
+  }, 2000)
+}
+
 </script>
 
 <style scoped>
@@ -252,4 +282,18 @@ import Footer from '../components/Footer.vue';
 .delay-300 {
   animation-delay: 0.3s;
 }
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
 </style>

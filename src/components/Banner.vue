@@ -9,6 +9,14 @@
       <div class="w-full h-full animate-glow bg-[radial-gradient(#38bdf8_1px,transparent_1px)] bg-[length:40px_40px] opacity-20"></div>
     </div>
 
+    <!-- Toast Message -->
+    <div
+      v-if="showToast"
+      class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-slow"
+    >
+      {{ toastMessage }}
+    </div>
+
     <!-- Overlay Content -->
     <div class="relative z-10 w-full bg-black/60 backdrop-blur-sm text-white px-4 py-20 flex justify-center">
       <div class="w-full max-w-7xl text-center flex flex-col items-center">
@@ -59,10 +67,11 @@
         <!-- Newsletter Signup -->
         <div class="w-full max-w-lg mb-12 px-4">
           <h3 class="text-xl font-semibold mb-4">📬 Get Early Access to Offers</h3>
-          <form class="flex flex-col sm:flex-row gap-4 justify-center" @submit.prevent aria-label="Newsletter signup form">
+          <form @submit.prevent="handleSubscribe" class="flex flex-col sm:flex-row gap-4 justify-center" aria-label="Newsletter signup form">
             <label class="sr-only" for="newsletter-email">Email</label>
             <input
               id="newsletter-email"
+              v-model="email"
               type="email"
               placeholder="Enter your email"
               required
@@ -83,9 +92,28 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+
+const email = ref('')
+const showToast = ref(false)
+const toastMessage = ref('')
+
+const handleSubscribe = () => {
+  if (email.value.trim()) {
+    toastMessage.value = `✅ Subscribed successfully with ${email.value}`
+    showToast.value = true
+    setTimeout(() => {
+      showToast.value = false
+      toastMessage.value = ''
+      email.value = ''
+    }, 2000)
+  }
+}
+</script>
+
 <style scoped>
 /* Tailwind Custom Utilities */
-
 
 /* Animations */
 @keyframes fade-in-slow {
