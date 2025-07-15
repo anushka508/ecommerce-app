@@ -235,7 +235,7 @@ const showToast = ref(false)
 const toastMessage = ref('')
 
 const handleSubscribe = () => {
-  toastMessage.value =`✅ Subscribed successfully with ${email.value}`
+  toastMessage.value =`✅ Subscribed successfully `
   showToast.value = true
 
   setTimeout(() => {
