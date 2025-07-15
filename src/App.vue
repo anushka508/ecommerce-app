@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  class="min-h-screen flex flex-col bg-white">
     <IntroLoader v-if="loading" />
     <router-view v-else />
   </div>

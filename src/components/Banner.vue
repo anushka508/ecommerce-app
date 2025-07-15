@@ -47,9 +47,9 @@
         </ul>
 
         <!-- Testimonial -->
-        <section class="w-full max-w-2xl mb-12 px-4" aria-label="Customer testimonial">
+        <section class="w-full max-w-md mb-12 px-4" aria-label="Customer testimonial">
           <h3 class="text-xl font-semibold mb-3">💬 What Our Customers Say</h3>
-          <blockquote class="bg-white text-black rounded-lg p-4 shadow-md">
+          <blockquote class="bg-white text-black rounded-lg  shadow-md">
             <p class="italic">“Lightning-fast delivery and unmatched product quality. MyShop has earned my trust.”</p>
             <footer class="mt-2 font-medium">– Rohan M., Pune</footer>
           </blockquote>
@@ -57,9 +57,14 @@
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 mb-12">
+         
           <router-link to="/products" aria-label="Go to products">
-            <button class="btn-primary">🛒 Shop Now</button>
+            <button class="btn-primary flex gap-x-2">
+            <ShoppingCartIcon class="w-6 h-6 text-white " />
+
+            Shop Now</button>
           </router-link>
+        
           <router-link to="/contact" aria-label="Contact support">
             <button class="btn-secondary">📞 Contact Support</button>
           </router-link>
@@ -95,6 +100,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import { ShoppingCartIcon } from '@heroicons/vue/24/solid'
+
 
 const email = ref('')
 const showToast = ref(false)
